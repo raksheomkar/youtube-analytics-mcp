@@ -1,0 +1,61 @@
+{
+  "name": "youtube-analytics-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server for YouTube Analytics & Data APIs. Deep analytics, audience retention, traffic sources, demographics, and automated Excel reporting.",
+  "type": "module",
+  "main": "./build/index.js",
+  "bin": {
+    "youtube-analytics-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "tsx src/index.ts",
+    "auth": "tsx src/auth/authenticate-cli.ts",
+    "export": "tsx src/scripts/export-analytics-excel.ts",
+    "dashboard": "tsx src/server/dashboard-server.ts",
+    "inspect": "npx @modelcontextprotocol/inspector tsx src/index.ts",
+    "test": "npm run build && ./test_all_tools.sh"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Omkar Rakshe <omkarrakshe2808@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raksheomkar/youtube-analytics-mcp.git"
+  },
+  "homepage": "https://github.com/raksheomkar/youtube-analytics-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/raksheomkar/youtube-analytics-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "youtube",
+    "youtube-analytics",
+    "youtube-data-api",
+    "claude",
+    "cursor",
+    "analytics",
+    "excel",
+    "audience-retention",
+    "traffic-sources"
+  ],
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "@modelcontextprotocol/sdk": "1.17.3",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^128.0.0",
+    "xlsx": "^0.18.5",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "tsx": "^4.0.0",
+    "typescript": "5.9.2"
+  }
+}
